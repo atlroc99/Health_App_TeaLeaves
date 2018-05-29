@@ -1,0 +1,31 @@
+<html>
+<head>
+
+<script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+
+<script type="text/javascript" charset="utf-8">
+$(document).ready(function() {
+	$('#submit-button').on('click', function() {
+		$(this).prop("disabled", true);
+		
+		setTimeout(function() {
+			// change this to button id
+			$('#submit-button').prop("disabled", false);
+		}, 1000);
+	});
+	
+	$('#form').on('submit', function() {
+		return false;
+	});
+});	
+</script>
+	
+</head>
+<body>
+	<form id="form">
+		<label for="text-field">Name</label>
+		<input id="text-field" type="text" />
+		<input id="submit-button" type="submit" value="Save" />
+	</form>
+</body>
+</html>
