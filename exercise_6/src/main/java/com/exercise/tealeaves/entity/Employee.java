@@ -17,7 +17,7 @@ public class Employee implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int employeeId;
+	private Integer employeeId;
 	
 	@Column(nullable=false, updatable=true)
 	private String firstName;
