@@ -11,10 +11,10 @@ public class App {
 	
 	public static void main(String[] args) {
 		String[] values = {"green","Red", 
-							"grEeN","Blue",
-							"yellow", "Green", "BLUE",
-							"YelloW", "YELLow","adeline",
-							"Yellow", "Black", "black", "BLACK", "2343"};
+				   "grEeN","Blue",
+				   "yellow", "Green", "BLUE",
+				   "YelloW", "YELLow","adeline",
+				    "Yellow", "Black", "black", "BLACK", "2343"};
 
 		String[] sortedValues = sortUnique(values);
 		for (String s : sortedValues) {
