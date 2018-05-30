@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,8 +37,9 @@ public class EmployeeController {
 	}
 	
 	
-	@GetMapping(value="/employee/{employeeId}", produces="application/json")
-	public @ResponseBody ResponseEntity<Employee> getEmployeeById(@PathVariable(name="employeeId") int employeeId){
+	@GetMapping(value="/employee/{employeeId}", produces=MediaType.APPLICATION_JSON_VALUE)
+	@ResponseBody
+	public Employee getEmployeeById(@PathVariable(name="employeeId") int employeeId){
 		System.out.println("**** get employee by Id: "+ employeeId);
 		Employee employee =  employeeService.getEmployeeById(employeeId);
 		
