@@ -20,6 +20,10 @@ public class Organization implements Serializable {
 	@Column
 	private String organizationName;
 	
+	public void setOrgId(int orgId) {
+		this.orgId = orgId;
+	}
+
 	public Organization(){
 		
 	}
@@ -35,4 +39,10 @@ public class Organization implements Serializable {
 	public int getOrgId() {
 		return orgId;
 	}
+
+	@Override
+	public String toString() {
+		return "Organization [orgId=" + orgId + ", organizationName=" + organizationName + "]";
+	}
+	
 }

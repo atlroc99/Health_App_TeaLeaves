@@ -19,12 +19,14 @@ public class Department implements Serializable  {
 	private int deptId;
 	
 	@Column(name="DEPATMETN_NAME")
-	@NotBlank
 	private String name;
 	
 	@Column(name="NUMBER_OF_EMPOYEE")
-	@NotBlank()
 	private int noOfEmployee;
+
+	public void setDeptId(int deptId) {
+		this.deptId = deptId;
+	}
 
 	public Department() {
 	}
@@ -49,4 +51,9 @@ public class Department implements Serializable  {
 		return deptId;
 	}
 
+	@Override
+	public String toString() {
+		return "Department [deptId=" + deptId + ", name=" + name + ", noOfEmployee=" + noOfEmployee + "]";
+	}
 }
+

@@ -2,13 +2,19 @@ package com.exercise.tealeaves.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotBlank;
+
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 @Entity
 public class Employee implements Serializable {
@@ -16,21 +22,24 @@ public class Employee implements Serializable {
 	private static final long serialVersionUID = -6258217592970452118L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Integer employeeId;
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Integer id;
 	
 	@Column(nullable=false, updatable=true)
 	private String firstName;
 	
-	@NotBlank
+	@Column(nullable=false, updatable=true)
 	private String lastName;
 	
-	@NotBlank
-	@ManyToOne
+
+	@ManyToOne(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+	@JoinColumn(name="orgId", nullable=false)
 	private Organization organization;
 	
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.ALL, fetch= FetchType.EAGER)
+	@JoinColumn(name="dept_id", nullable=false)
 	private Department department;
+
 
 	public Employee(){}
 	
@@ -66,8 +75,19 @@ public class Employee implements Serializable {
 		this.department = department;
 	}
 
+/*	public void setId(Integer id) {
+		this.id = id;
+	}
+*/
 	public int getId() {
-		return employeeId;
+		return id;
 	}
 
+	@Override
+	public String toString() {
+		return "Employee [employeeId=" + id + ", firstName=" + firstName + ", lastName=" + lastName
+				+ ", organization=" + organization + ", department=" + department + "]";
+	}
+
+	
 }

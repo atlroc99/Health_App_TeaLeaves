@@ -1,6 +1,7 @@
 package com.exercise.tealeaves.serviceImpl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,7 +19,11 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Override
 	public Employee getEmployeeById(int empId) {
 		
-		return employeeRepository.findById(empId).get();
+		Optional<Employee> optionalEmployee =  employeeRepository.findById(empId);
+		Employee employee = optionalEmployee.get();
+		System.out.println("inside the Employee Service Impl : "+ employee);
+		
+		return employee;
 	}
 
 	@Override
@@ -35,11 +40,11 @@ public class EmployeeServiceImpl implements EmployeeService {
 		
 	}
 
-	@Override
+/*	@Override
 	public int addNewEmployee(Employee employee) {
 		
 		return employeeRepository.addNewEmployee(employee);
-	}
+	}*/
 
 	@Override
 	public void deleteEmployee(Employee employee) {
@@ -48,9 +53,14 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	@Override
-	public void updateEmployee(Employee employee) {
+	public void addOrUpdate(Employee employee) {
 		
-		employeeRepository.updateEmployee(employee);
+		if(employee !=null){
+			employeeRepository.saveAndFlush(employee);
+		}else
+		{
+			System.out.println("no emploeyee found to be updated");
+		}
 	}
 
 }

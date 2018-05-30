@@ -15,10 +15,10 @@ public interface EmployeeService {
 	
 	Employee getEmployeeByLastName(String lastName);
 	
-	int addNewEmployee(Employee employee);
+	void addOrUpdate(Employee employee);
 	
 	void deleteEmployee(Employee employee);
 	
-	void updateEmployee(Employee employee);
+//	void updateEmployee(Employee employee);
 	
 }

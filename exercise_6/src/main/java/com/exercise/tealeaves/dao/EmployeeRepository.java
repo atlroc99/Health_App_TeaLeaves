@@ -16,10 +16,10 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 	
 	Employee getEmployeeByLastName(String lastName);
 	
-	int addNewEmployee(Employee employee);
+	//int addNewEmployee(Employee employee);
 	
 	//void deleteEmployee(int id);
 	
-	void updateEmployee(Employee employee);
+	//void updateEmployee(Employee employee);
 	
 }
