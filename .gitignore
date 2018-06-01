@@ -1,2 +1,6 @@
 ~$veloperTest_JavaJunior.docx
 .gitignore.swp
+mvnw*
+mvnw.cmd
+target/
+
