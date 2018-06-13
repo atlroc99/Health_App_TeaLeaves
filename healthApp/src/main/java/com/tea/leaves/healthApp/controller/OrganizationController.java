@@ -21,6 +21,10 @@ public class OrganizationController {
 		return "welcome";
 	}
 	
+	@GetMapping("/aboutpage")
+	public String getAboutPage() {
+		return "aboutus";
+	}
 	
 	
 	
