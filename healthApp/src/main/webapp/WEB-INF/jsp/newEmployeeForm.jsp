@@ -2,9 +2,13 @@
 <%@ include file="menu.jsp" %>
 
 <div class="container">
-    <div class="col-md-12">
-        <div class="row">
+		<div class="row" style="margin-bottom: 30px">
+			<div class="col-md-12">
+				<h5>Add a new employee</h5>
+			</div>
+		</div>
 
+        <div class="row">
          <form>
             <div class="form-group">
                 <label for="fname">First Name</label>
