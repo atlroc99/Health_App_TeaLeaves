@@ -18,7 +18,7 @@
 		</div>
 
 		<div class="col-md-2">
-			<a href="/deleteForm">Delete employee</a>
+			<a href="/deleteEmpForm">Delete employee</a>
 		</div>
 	</div>
 

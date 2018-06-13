@@ -74,6 +74,13 @@ public class EmployeeController {
 		return employeeService.updateEmployee(employee);
 	}
 
+	
+	@GetMapping("/deleteEmpForm")
+	public String getDelEmpForm() {
+		return "delEmpForm";
+	}
+	
+	
 	@ResponseBody
 	@GetMapping("/delete/{id}")
 	public String deleteEmployee(@PathVariable(name = "id") Integer id) {

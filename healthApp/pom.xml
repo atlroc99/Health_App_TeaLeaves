@@ -9,7 +9,7 @@
 	<version>1.0.0-SNAPSHOT</version>
 
 	<name>healthApp</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Demo project for Sp ring Boot</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
