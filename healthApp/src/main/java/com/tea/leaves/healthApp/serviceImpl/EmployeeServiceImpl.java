@@ -50,22 +50,15 @@ public class EmployeeServiceImpl implements EmployeeService{
 			if(currentInfo.getLastName() != "") {
 				newInfo.setLastName(currentInfo.getLastName());
 			}
-			
 			if(currentInfo.getSalary() != null && currentInfo.getSalary() > 0) {
 				System.out.println("Salary is again null");
 				newInfo.setSalary(currentInfo.getSalary());
 			}
-//			if(currentInfo.getSalary()!=null || currentInfo.getSalary() != 0) {
-//				newInfo.setSalary(currentInfo.getSalary());
-//			}
-			
 			if(currentInfo.getDepartment() != null && currentInfo.getDepartment().getDepartmentName() != "") {
 				newInfo.getDepartment().setDepartmentName(currentInfo.getDepartment().getDepartmentName());
+				updateDepartmentWithId(newInfo, currentInfo.getDepartment().getDepartmentName());
 			}
 		}
-		
-		System.out.println("new udpate Info: ");
-		System.out.println(newInfo);
 		
 		return employeeRepository.save(newInfo);
 	}
@@ -78,16 +71,19 @@ public class EmployeeServiceImpl implements EmployeeService{
 	@Override
 	public Employee addEmployee(Employee employee) {
 
-		System.out.println(">>>>>> Form submitted first name: " + employee.getFirstName() + " \n>>>>>> dept :" + employee.getDepartment().getDepartmentName());
-		
 		List<Employee> employees = employeeRepository.findAll();
-		
 		Integer lastId = employees.get(employees.size()-1).getId();
-		
-		System.out.println("\n>>>>>>> Last employee ID: " + lastId);
 		employee.setId(lastId+100);
-
-		String deptName = employee.getDepartment().getDepartmentName().toUpperCase(); 
+		updateDepartmentWithId(employee, employee.getDepartment().getDepartmentName());
+		
+		return employeeRepository.save(employee);
+	}
+	
+	
+	private void updateDepartmentWithId(Employee employee , String departmentName) {
+		
+		String deptName = departmentName.toUpperCase();
+		
 		switch (deptName) 
 		{
 			case "IT":
@@ -108,8 +104,12 @@ public class EmployeeServiceImpl implements EmployeeService{
 			case "LOGISTIC":
 				employee.getDepartment().setId(7);
 			break;
+			case "ENGINEERING":
+				employee.getDepartment().setId(8);
+			break;
+			case "TRAVEL":
+				employee.getDepartment().setId(9);
+			break;
 		}
-		
-		return employeeRepository.save(employee);
 	}
 }

@@ -32,10 +32,11 @@ function ajaxSubmit(){
             	console.log("result status", result);
             	
             	$("#empInfo").html('<hr><div class = "row" style="margin-top:30px;">'
-            						+'Id: ' + result.id + '<br>' 
+            						+'Employee id: ' + result.id + '<br>' 
             						+'First name: ' + result.firstName + '<br>'
             						+'Last name: ' + result.lastName+ '<br>'
             						+'Salary: ' + result.salary + '<br>'
+            						+'Department id: ' + result.department.id + '<br>'
             						+'Department: ' + result.department.departmentName + '<br>'
             						+'</div>');
             }
