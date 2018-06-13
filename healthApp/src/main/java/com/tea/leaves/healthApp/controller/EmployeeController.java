@@ -67,6 +67,12 @@ public class EmployeeController {
 		return employeeService.addEmployee(employee);
 	}
 
+	@GetMapping("/updateEmpForm")
+	public String getUpdateEmpForm() {
+		return "updateEmpForm";
+	}
+	
+	
 	@ResponseBody
 	@PutMapping("/update")
 	public Employee updateEmployee(@RequestBody Employee employee) {

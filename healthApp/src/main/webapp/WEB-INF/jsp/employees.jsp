@@ -14,7 +14,7 @@
 		</div>
 
 		<div class="col-md-2">
-			<a href="updateForm">Update employee</a>
+			<a href="/updateEmpForm">Update employee</a>
 		</div>
 
 		<div class="col-md-2">
