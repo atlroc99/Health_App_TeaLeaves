@@ -15,8 +15,9 @@ function ajaxSubmitDelete(){
         type:"GET",
         contentType: "application/json",
         url:"/delete/"+ $("#delEmpId").val(),
-        success:function(result){
-            console.log('result', result);
+        data:formData,
+        success: function(){
+        	window.location="/employee";
         },
         error: function(er){
             console.log('error', er);

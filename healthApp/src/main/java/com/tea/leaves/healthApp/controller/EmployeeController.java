@@ -91,7 +91,8 @@ public class EmployeeController {
 	@GetMapping("/delete/{id}")
 	public String deleteEmployee(@PathVariable(name = "id") Integer id) {
 		employeeService.deleteEmployee(id);
-		return "employee with id : " + id + " delete";
+		return "EmployeeController: employee with id : " + id + " deleted";
+		
 	}
 
 	
