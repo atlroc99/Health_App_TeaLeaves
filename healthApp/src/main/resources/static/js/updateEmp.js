@@ -40,35 +40,3 @@ console.log('inside the Employee emp js file');
 	  });
  });
 
-
-// $(document).ready(function(){
-//     $("#updateForm").submit(function(event){
-//         event.preventDefault();
-//         ajaxSubmitUpdate();
-//     });
-// });
-
-
-// function ajaxSubmitUpdate(){
-//     var formData = {
-//         id: $("#id").val(),
-//         firstName: $("#fname").val(),
-//         lastName: $("#lname").val(),
-//         salary: $("#salary").val(),
-//         dept: $("#dept").val()
-//     }
-
-//     $.ajax({
-//         type:"PUT",
-//         contentType: "application/json",
-//         url:"/update",
-//         data:formData,
-//         success: function(){
-//             window.location="/allEmployees";
-//             alert("Employee with id " + formData.id + " update");
-//         },
-//         error: function(er){
-//             console.log('error', er);
-//         }
-//     });
-// }

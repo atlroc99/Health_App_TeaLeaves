@@ -50,10 +50,16 @@ public class EmployeeServiceImpl implements EmployeeService{
 			if(currentInfo.getLastName() != "") {
 				newInfo.setLastName(currentInfo.getLastName());
 			}
-			if(currentInfo.getSalary() != 0) {
+			
+			if(currentInfo.getSalary() != null && currentInfo.getSalary() > 0) {
+				System.out.println("Salary is again null");
 				newInfo.setSalary(currentInfo.getSalary());
 			}
-			if(currentInfo.getDepartment().getDepartmentName() != "") {
+//			if(currentInfo.getSalary()!=null || currentInfo.getSalary() != 0) {
+//				newInfo.setSalary(currentInfo.getSalary());
+//			}
+			
+			if(currentInfo.getDepartment() != null && currentInfo.getDepartment().getDepartmentName() != "") {
 				newInfo.getDepartment().setDepartmentName(currentInfo.getDepartment().getDepartmentName());
 			}
 		}
