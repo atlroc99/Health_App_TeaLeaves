@@ -76,11 +76,9 @@ public class EmployeeController {
 	@ResponseBody
 	@PutMapping("/update")
 	public Employee updateEmployee(@RequestBody Employee employee) {
-		
 		return employeeService.updateEmployee(employee);
 	}
 
-	
 	@GetMapping("/deleteEmpForm")
 	public String getDelEmpForm() {
 		return "delEmpForm";

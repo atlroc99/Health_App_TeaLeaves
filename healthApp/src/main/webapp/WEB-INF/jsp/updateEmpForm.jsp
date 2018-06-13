@@ -32,8 +32,11 @@
 					<label for="dept">Department</label>
 					<input type="text" class="form-control" id="dept">
 				</div>
-				<button class="btn btn-success" type="submit">Update</button>
+				<input id="updateButton" type="button" class="btn btn-primary" value="Update">
 			</form>
 		</div>
 	</div>
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="js/updateEmp.js"></script>
