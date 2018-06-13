@@ -33,7 +33,7 @@ var links = document.querySelectorAll('a');
 		contentType: "application/json",
 		data: jsonObject,
 		success: function(){
-			 window.location= "/employee"
+			 window.location= "/allEmployees"
 			console.log("employee added" + jsonObject);
 		},
 		 dataType: "json"

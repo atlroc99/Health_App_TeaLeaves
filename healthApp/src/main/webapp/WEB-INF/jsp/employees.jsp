@@ -1,8 +1,8 @@
 <%@ include file="header.jsp" %>
 <%@ include file="menu.jsp"%>
 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 <div class="container">
-
 	<div class="row" style="margin-bottom: 10px">
 		<div class="col-md-2">
 			<a href="newEmployeeForm">add new employee</a>

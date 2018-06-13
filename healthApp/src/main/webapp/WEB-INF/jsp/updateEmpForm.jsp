@@ -1,5 +1,6 @@
 <%@ include file="header.jsp"%>
 <%@ include file="menu.jsp" %>
+<%@ include file="empCurdMenu.jsp" %>
 
 
 <div class="container">

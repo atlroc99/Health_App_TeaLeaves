@@ -17,7 +17,8 @@ function ajaxSubmitDelete(){
         url:"/delete/"+ $("#delEmpId").val(),
         data:formData,
         success: function(){
-        	window.location="/employee";
+            window.location="/allEmployees";
+            alert("employee deleted: " + $("#delEmpId").val());
         },
         error: function(er){
             console.log('error', er);
