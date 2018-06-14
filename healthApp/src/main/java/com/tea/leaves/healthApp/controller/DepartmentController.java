@@ -3,29 +3,37 @@ package com.tea.leaves.healthApp.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.tea.leaves.healthApp.documents.Department;
+import com.tea.leaves.healthApp.documents.searchDeptEntity;
 import com.tea.leaves.healthApp.services.DepartmentService;
 
-@RestController
-@RequestMapping("/departments")
+//@RestController
+@Controller
+@RequestMapping("/department")
 public class DepartmentController {
 
 	@Autowired
 	private DepartmentService departmentService;
 
+	@GetMapping("/allDepartments")
+	public String getAllDeptPage(){
+		return "departments";
+	}
+	
+	
 	@ResponseBody
-	@GetMapping("/")
+	@GetMapping("/departmentList")
 	public List<Department> getAllDepartments(){
 		return departmentService.getAllDepartments();
 	}
@@ -42,10 +50,18 @@ public class DepartmentController {
 	public Department updateDepartmen(@RequestBody Department department) {
 		return this.departmentService.updateDepartment(department);
 	}
+	
+	@GetMapping("/findDeptForm")
+	public String getFindDeptForm(){
+		return "findDeptForm";
+	}
+	
 	@ResponseBody
-	@GetMapping("/{id}")
-	public Department findDepartById(@PathVariable Integer id) {
-		return departmentService.findDepartmentById(id);
+	@GetMapping("/findDept")
+	public Department findDepartById(@ModelAttribute searchDeptEntity searchDeptEntity) {
+		
+		//return departmentService.findDepartmentById(id);
+		return null;
 	}
 
 	@GetMapping()
@@ -57,5 +73,14 @@ public class DepartmentController {
 	public void deleteDepartment(Integer id) {
 		this.departmentService.deleteDepartment(id);
 	}
+	
+	@GetMapping("/addNewDept")
+	public String getNewDeptForm()
+	{
+		return "newDeptForm";
+	}
+	
+	
+	
 
 }
