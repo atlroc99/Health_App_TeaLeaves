@@ -5,6 +5,11 @@
 <div class="container" style="margin-botton:30px">
 	<div class="row">
 		<div class="col-md-12">
+			<h5>Search department by id or name</h5>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
 			<form id="findDeptForm">
 				<div class="form-group">
 					<label for="deptId"> Id </label>
