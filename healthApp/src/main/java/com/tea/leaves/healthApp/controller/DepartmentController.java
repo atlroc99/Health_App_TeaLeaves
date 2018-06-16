@@ -20,7 +20,7 @@ import com.tea.leaves.healthApp.services.DepartmentService;
 
 //@RestController
 @Controller
-@RequestMapping("/department")
+@RequestMapping("/")
 public class DepartmentController {
 
 	@Autowired
@@ -47,7 +47,7 @@ public class DepartmentController {
 
 	@ResponseBody
 	@PutMapping("/update")
-	public Department updateDepartmen(@RequestBody Department department) {
+	public Department updateDepartment(@RequestBody Department department) {
 		return this.departmentService.updateDepartment(department);
 	}
 	
