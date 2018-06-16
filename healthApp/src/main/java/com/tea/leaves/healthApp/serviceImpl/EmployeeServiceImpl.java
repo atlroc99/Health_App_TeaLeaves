@@ -110,6 +110,9 @@ public class EmployeeServiceImpl implements EmployeeService{
 			case "TRAVEL":
 				employee.getDepartment().setId(9);
 			break;
+			case "HEALTH":
+				employee.getDepartment().setId(10);
+			break;
 		}
 	}
 }
